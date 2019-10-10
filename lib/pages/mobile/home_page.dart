@@ -75,7 +75,7 @@ class _HomePageState extends State<HomePageMobile> {
     );
   }
 
-  Widget _row2A() {
+  Widget _col2A() {
     return Container(
       margin: EdgeInsets.only(
         left: targetWidth / 38,
@@ -112,7 +112,7 @@ class _HomePageState extends State<HomePageMobile> {
     );
   }
 
-  Widget _row2B() {
+  Widget _col2B() {
     return Container(
       margin: EdgeInsets.only(
         right: targetWidth / 38,
@@ -227,15 +227,23 @@ class _HomePageState extends State<HomePageMobile> {
           children: <Widget>[
             Container(
               width: targetWidth / 1.3,
-              height: targetHeight - (2 * (targetHeight / 16)),
+              height: targetHeight -
+                  (2 * (targetHeight / 16)) -
+                  (targetHeight / 20),
+              margin: EdgeInsets.only(top: targetHeight / 20),
               child: Center(
-                child: _row2A(),
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.vertical,
+                  child: _col2A(),
+                ),
               ),
             ),
             Container(
               width: targetWidth - (targetWidth / 1.3),
-              height: targetHeight - (2 * (targetHeight / 16)),
-              child: _row2B(),
+              height: targetHeight -
+                  (2 * (targetHeight / 16)) -
+                  (targetHeight / 20),
+              child: _col2B(),
             ),
           ],
         ),
